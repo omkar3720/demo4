@@ -22,7 +22,7 @@ public class EmployeeController {
 	@PostMapping("/saveEmployee")
 	public ResponseEntity<Employee> saveEmployee(@RequestBody Employee e) {
 		Employee e1 = esi.saveEmployee(e);
-	
+		System.out.println(e1);
 		return new ResponseEntity<Employee>(e1, HttpStatus.CREATED);
 	}
 
