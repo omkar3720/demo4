@@ -22,14 +22,14 @@ public class EmployeeController {
 	@PostMapping("/saveEmployee")
 	public ResponseEntity<Employee> saveEmployee(@RequestBody Employee e) {
 		Employee e1 = esi.saveEmployee(e);
-		System.out.println(e1);
+		
 		return new ResponseEntity<Employee>(e1, HttpStatus.CREATED);
 	}
 
 	@GetMapping("/getAllEmployee")
 	public ResponseEntity<List<Employee>> getAllEmployee() {
 		List<Employee> l = esi.getAllEmployee();
-		System.out.println(l);
+		
 		return new ResponseEntity<List<Employee>>(l, HttpStatus.OK);
 	}
 }
