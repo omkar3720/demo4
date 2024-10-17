@@ -29,7 +29,7 @@ public class EmployeeController {
 	@GetMapping("/getAllEmployee")
 	public ResponseEntity<List<Employee>> getAllEmployee() {
 		List<Employee> l = esi.getAllEmployee();
-
+		System.out.println(l);
 		return new ResponseEntity<List<Employee>>(l, HttpStatus.OK);
 	}
 }
