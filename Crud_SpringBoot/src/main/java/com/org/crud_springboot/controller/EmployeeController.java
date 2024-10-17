@@ -14,25 +14,22 @@ import com.org.crud_springboot.model.Employee;
 import com.org.crud_springboot.servicei.EmployeeServiceI;
 
 @RestController
-public class EmployeeController
-{
+public class EmployeeController {
 
-@Autowired
-EmployeeServiceI esi;
+	@Autowired
+	EmployeeServiceI esi;
 
-@PostMapping("/saveEmployee")
-public ResponseEntity<Employee> saveEmployee(@RequestBody Employee e)
-{
-    Employee e1 = esi.saveEmployee(e);
-    
-    return new ResponseEntity<Employee>(e1,HttpStatus.CREATED);
-}
+	@PostMapping("/saveEmployee")
+	public ResponseEntity<Employee> saveEmployee(@RequestBody Employee e) {
+		Employee e1 = esi.saveEmployee(e);
 
-@GetMapping("/getAllEmployee")
-public ResponseEntity<List<Employee>> getAllEmployee()
-{
-	List<Employee> l = esi.getAllEmployee();
-	
-	return new ResponseEntity<List<Employee>>(l,HttpStatus.OK);
-}
+		return new ResponseEntity<Employee>(e1, HttpStatus.CREATED);
+	}
+
+	@GetMapping("/getAllEmployee")
+	public ResponseEntity<List<Employee>> getAllEmployee() {
+		List<Employee> l = esi.getAllEmployee();
+
+		return new ResponseEntity<List<Employee>>(l, HttpStatus.OK);
+	}
 }
